@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botões transparentes</title>
+    <style>
+        .botoes
+        {
+            width: 200px;
+            height: 80px;
+            background-color: silver;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+        }
+        .bt1
+        {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: green;
+        }
+
+        .colocar_transparencia_bt1
+        {
+            animation: e_bt1 1s forwards;
+        }
+        @keyframes e_bt1 {
+            0%{opacity: 1;}
+            100%{opacity: 0.5;}
+        }
+
+        .retirar_transparencia_bt1
+        {
+            animation: m_bt1 1s forwards;
+        }
+        @keyframes m_bt1 {
+            0%{opacity: 0.5;}
+            100%{opacity: 1;}
+        }
+
+        .bt2
+        {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: yellow;
+        }
+        .colocar_transparencia_bt2
+        {
+            animation: e_bt2 1s forwards;
+        }
+        @keyframes e_bt2 {
+            0%{opacity: 1;}
+            100%{opacity: 0.5;}
+        }
+
+        .retirar_transparencia_bt2
+        {
+            animation: m_bt2 1s forwards;
+        }
+        @keyframes m_bt2 {
+            0%{opacity: 0.5;}
+            100%{opacity: 1;}
+        }
+        .bt3
+        {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: blue;
+        }
+        .colocar_transparencia_bt3
+        {
+            animation: e_bt3 1s forwards;
+        }
+        @keyframes e_bt3 {
+            0%{opacity: 1;}
+            100%{opacity: 0.5;}
+        }
+
+        .retirar_transparencia_bt3
+        {
+            animation: m_bt3 1s forwards;
+        }
+        @keyframes m_bt3 {
+            0%{opacity: 0.5;}
+            100%{opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="botoes">
+        <div onclick="bt1();" id="bt1" class="bt1"></div>
+        <div onclick="bt2();" id="bt2" class="bt2"></div>
+        <div onclick="bt3();" id="bt3" class="bt3"></div>
+    </div>
+
+</body>
+
+<script>
+    let cliquebt1 = 0
+    function bt1()
+    {
+        cliquebt1 = cliquebt1 + 1
+        if(cliquebt1==1)
+        {
+            document.getElementById("bt1").classList.remove("retirar_transparencia_bt1")
+            document.getElementById("bt2").classList.remove("retirar_transparencia_bt2")
+            document.getElementById("bt3").classList.remove("retirar_transparencia_bt3")
+
+            document.getElementById("bt1").classList.add("colocar_transparencia_bt1")
+            document.getElementById("bt2").classList.add("colocar_transparencia_bt2")
+            document.getElementById("bt3").classList.add("colocar_transparencia_bt3")
+        }
+        if(cliquebt1==2)
+        {
+            document.getElementById("bt1").classList.remove("colocar_transparencia_bt1")
+            document.getElementById("bt2").classList.remove("colocar_transparencia_bt2")
+            document.getElementById("bt3").classList.remove("colocar_transparencia_bt3")
+            cliquebt1 = 0
+            document.getElementById("bt1").classList.add("retirar_transparencia_bt1")
+            document.getElementById("bt2").classList.add("retirar_transparencia_bt2")
+            document.getElementById("bt3").classList.add("retirar_transparencia_bt3")
+        }
+    }
+</script>
+</html>

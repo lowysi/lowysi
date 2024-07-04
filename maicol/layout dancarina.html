@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            flex-direction: column;
+            margin: 0px;
+        }
+        .D1{
+            width: 200px;
+            height: 200px;
+            display: flex;
+            background-color: yellow;
+            overflow: hidden;
+        }
+        
+        .dancarina{
+            width: 80px;
+            position: relative;
+            top: 90px;
+            left: 0px;
+            animation: move_dancarina 5s infinite alternate;
+        }
+        @keyframes move_dancarina {
+            0%
+            {
+                top: 0px;
+                left: 0px;
+            }
+            100%
+            {
+                top: 0px;
+                left: 120px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="D1">
+        <img class="dancarina" src="dancarina.gif">
+    </div>
+</body>
+</html> 
